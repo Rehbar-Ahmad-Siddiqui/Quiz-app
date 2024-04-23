@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0dea89e3c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz App</title>
+</head>
+<body> 
+    
+    <div class="camera">
+        <h4>You are under camera: </h4>
+        <video id="camera-preview" autoplay muted playsinline ></video>
+        <button id="start-camera-button" onclick="startCamera()">Start Camera</button>
+        <button id="stop-camera-button" onclick="stopCamera()" disabled>Stop Camera</button> 
+    </div>
+    
+
+    <div id="start-container">
+        <h1>Course by Sid Quiz App</h1>
+        <h3>Rules for Quiz App :</h3>
+        <p>1. To get started, <span>enter your name</span> first.</p>
+        <p>2. <span>Upload</span> your <span>profile picture.</span></p>
+        <p>3. <span>Start the camera</span> before starting the quiz.</p>
+        <p>4. <span>Time is 30 seconds</span> to answer the question.</p>
+        <p>5. Select the answer & click on <span>Next Button</span> for next question.</p>
+        <p>6. User can click on <span>Finish Button</span> anytime to finish the quiz.</p>
+        <p>7. <span>Result</span> will be only displayed at the end of quiz.</p>
+        <p>8. At the end of quiz click on <span>View Solutions</span> to see the answers.</p>
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" placeholder="Your Name">
+        <br>
+        <label for="profile-image">Upload picture:</label>
+        <input type="file" id="profile-image">
+        <button id="start-button" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="quiz-container" class="hide">
+        <div id="user-display"></div> <!-- Add a div for displaying user's name -->
+        <img id="profile-picture" src="" alt="Profile Picture">
+        <div id="question-container"></div>  
+        <div id="answer-buttons" class="btn-container"></div>
+        <button id="next-button" class="btn" onclick="nextQuestion()">Next</button>
+        <button id="finish-button" class="btn hide" onclick="finishQuiz()">Finish</button>
+        <button id="view-solutions-button" class="btn hide" onclick="showSolutions()">View Solutions</button>
+        <div id="result-container" class="hide"></div>
+        <div id="solutions-container" class="hide"></div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
